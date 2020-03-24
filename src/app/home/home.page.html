@@ -1,0 +1,43 @@
+
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> {{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home" [ngClass]="(clima == 'tempo nublado' || clima == 'nuvens quebrados') ? 'nublado' : 'bom'" padding>
+  <ion-grid *ngIf="dataWeather">
+    <ion-row>
+      <ion-col width-50>
+        <h2 class="location">{{dataWeather.name}}</h2>
+        <div *ngIf="weatherIcon" class="icon"><img src="{{weatherIcon}}" alt="clima"></div>
+        <h5 class="desc">{{dataWeather.weather[0].description}}</h5>
+        <h1 class="temp">{{dataWeather.main.temp}}&deg;</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <!-- <ion-item>
+            <strong>Temperatura: </strong><span class="alinhaDireita"> {{dataWeather.main.temp}}&deg;</span>
+          </ion-item> -->
+          <ion-item>
+            <strong>Humidade Rel: </strong><span class="alinhaDireita"> {{dataWeather.main.humidity}}%</span>
+          </ion-item>
+          <ion-item>
+            <strong>Temp. Min.: </strong><span class="alinhaDireita"> {{dataWeather.main.temp_min}}&deg;</span>
+          </ion-item>
+          <ion-item>
+            <strong>Temp. Max.: </strong><span class="alinhaDireita"> {{dataWeather.main.temp_max}}&deg;</span>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="!dataWeather" class="home" padding>
+    <p><strong> Certifique-se de que há conexão com a internet, ou digite novamente a cidade. </strong></p>
+  </div>
+</ion-content>
