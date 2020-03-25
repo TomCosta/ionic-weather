@@ -28,7 +28,10 @@ $ npm install
 $ ionic serve
 ```
 
-### Criar uma conta e solicitar chave de API na Open Weather
+### Criar uma conta e solicitar chave de API na [Open Weather](https://openweathermap.org/)
+```bash
+const key = 'YOUR_API_KEY';
+```
 
 ### ------------------------------------------------------------------
 # Se não tiver o Ionic instalado
