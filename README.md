@@ -1,5 +1,5 @@
 
-# Ionic Clima App
+# Ionic Clima App com Open Weather
 
 ![Clima](./src/assets/imgs/clima-app.png)
 
