@@ -29,6 +29,7 @@ $ ionic serve
 ```
 
 ### Criar uma conta e solicitar chave de API na [Open Weather](https://openweathermap.org/)
+No arquivo `apiweather.service.ts` inclua a sua chave/key da Api
 ```bash
 const key = 'YOUR_API_KEY';
 ```
