@@ -6,9 +6,11 @@ import { ApiweatherService } from './../services/api/apiweather.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
+
 export class HomePage implements OnInit {
 
   title = 'Clima';
+  dataWeather;
 
   constructor(
     private apiServ: ApiweatherService
@@ -24,6 +26,7 @@ export class HomePage implements OnInit {
     let country = 'BR';
     this.apiServ.getWeather(city, country).subscribe((res)=>{
       console.log('Result: ', res);
+      this.dataWeather = res;
     })
   }
 }

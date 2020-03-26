@@ -11,7 +11,8 @@ const urlBase = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 export class ApiweatherService {
 
-  key = 'YOUR_API_KEY';
+  // key = 'YOUR_API_KEY';
+  key = 'e659687d5c33ddd16b00b2d17ba201e4';
 
   httpOptions = {
     headers: new HttpHeaders({

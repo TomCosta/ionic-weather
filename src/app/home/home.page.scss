@@ -1,0 +1,59 @@
+.alinhaDireita{
+    text-align: right !important;
+}
+
+.home{
+    color: #008000;
+    margin-top: 20px;
+}
+
+.bom{
+--background: linear-gradient(197deg, #ffffef 0%, #ffff80 13.5%, #ffff60 33.33%, #ffff00 100%);
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffef+42,ffff88+54,ffff88+54 */
+background: #ffffef; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #ffffef 42%, #ffff88 84%, #ffff88 4%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #ffffef 42%,#ffff88 84%,#ffff88 4%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #ffffef 42%,#ffff88 84%,#ffff88 4%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffef', endColorstr='#ffff88',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.nublado{
+--background: linear-gradient(197deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 13.5%, rgba(0,0,0,0.60) 33.33%, rgba(0,0,0,0.80) 100%);
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+97&0+35,0.65+72 */
+background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0.65) 90%, rgba(0,0,0,0.65) 4%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.65) 90%,rgba(0,0,0,0.65) 4%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.65) 90%,rgba(0,0,0,0.65) 4%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */    
+}
+
+// .toolbar-title{
+//     text-align: center;
+// }
+
+.tabs-md .tab-button-icon{
+    color:#ccc000;
+}
+
+.temp{
+    font-size:70px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.location,.icon, .desc{
+    text-align: center;
+}
+
+.icon img{
+    width: 100px;
+    margin-top: -15px;
+    margin-bottom: -30px;
+}
+
+.location{
+    font-size:30px;
+}
+
+.desc{
+    font-size:20px;
+}
