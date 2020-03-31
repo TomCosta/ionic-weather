@@ -4,6 +4,7 @@
 ![Clima](./src/assets/imgs/clima-app.png)
 
 ![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso] ![License][license-badge]
+#### | **IONIC** | [`@ionic/angular`](https://www.npmjs.com/package/@ionic/angular) [![version](https://img.shields.io/npm/v/@ionic/angular/latest.svg)](https://www.npmjs.com/package/@ionic/angular)
 
 Please, give a ⭐ to the repo. It really motivates me to share more open source code.
 

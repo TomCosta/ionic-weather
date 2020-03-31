@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IonRouterOutlet} from '@ionic/angular';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -8,32 +10,35 @@ import { Storage } from '@ionic/storage';
 })
 export class ConfigPage implements OnInit {
 
-  local = {
+  location = {
     city: '', 
-    country: ''
+    country: 'BR'
   }
 
+  canGoBack: boolean = false;
+
   constructor(
-    private storage: Storage
-  ){    
+    private routerOutlet: IonRouterOutlet,
+    private storage: Storage,
+    private router: Router
+  ){
   }
 
   ngOnInit() {
+    this.canGoBack = this.routerOutlet && this.routerOutlet.canGoBack();
   }
 
-  getLocation(){
-    // Or to get a key/value pair
-    this.storage.get('local').then((val) => {
-      if(val != null || val != undefined){
-        
-      }
-      console.log('Your age is', val);
-    });
+  saveConfig(formData){
+    console.log('Form data is ', formData);
+    this.location.city = formData.city,
+    this.location.country = formData.country,
+    this.storage.set('location', JSON.stringify(this.location));
+    this.router.navigateByUrl('/home');
   }
 
-  setLocation(location){
-    // set a key/value
-    this.storage.set('local', location);
-  }
 
+  gotToPage(){
+    // this.router.navigate(['/home']);
+    this.router.navigateByUrl('/home');
+  }
 }

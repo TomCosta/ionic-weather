@@ -11,8 +11,7 @@ const urlBase = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 export class ApiweatherService {
 
-  // key = 'YOUR_API_KEY';
-  key = 'e659687d5c33ddd16b00b2d17ba201e4';
+  key = 'YOUR_API_KEY';  
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,11 +23,11 @@ export class ApiweatherService {
 
   constructor(
     private myHttp: HttpClient
-  ){    
+  ){
   }
 
   getWeather(city, country){
-    return this.myHttp.get(urlBase + city +',' + country + '&appid='+ this.key)
+    return this.myHttp.get(urlBase + city +',' + country + '&lang=pt&units=metric&appid='+ this.key)
     .pipe(
       retry(1),
       catchError(this.errorHandl)

@@ -1,12 +1,39 @@
+
 <ion-header [translucent]="false">
-  <ion-toolbar>
-    <ion-buttons slot="center">
-      <ion-menu-button></ion-menu-button>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="canGoBack"></ion-back-button>
+      <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
     </ion-buttons>
-    <ion-title> Config</ion-title>
+    <ion-title>Configuração</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="fundao">
+  <div class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <form (ngSubmit)="saveConfig(location)" novalidate class="ion-padding-horizontal">
+            <ion-item>
+              <ion-label fixed>
+                Cidade
+              </ion-label>
+              <ion-input placeholder="Cidade" [(ngModel)]="location.city" name="city" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label fixed>
+                País
+              </ion-label>
+              <ion-input placeholder="País" [(ngModel)]="location.country" name="country" type="text" maxlength="2"></ion-input>
+            </ion-item>
+            <p></p>
+            <ion-button expand="block" fill="outline" type="submit" color="success">Adicionar</ion-button>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
 </ion-content>
