@@ -4,6 +4,13 @@
     margin-top: 20px;
 }
 
+.image_title{
+    line-height: 40px;
+    padding-left: 50px;
+    background: url('../../assets/imgs/clima_logo.png') no-repeat left center;
+    background-size: contain;
+}
+
 .bom{
     --background: radial-gradient(center, #ffff00 0%,#ffff00 30%, #ffffef 50%,#ffff00 80%, #ffff00 100%);
 // --background: radial-gradient(360deg, #ffff00 0%, #ffff80 15%, #ffffef 30%, #ffff60 45%, #ffff00 100%);

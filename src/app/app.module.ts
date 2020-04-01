@@ -18,7 +18,11 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: 'Clima',
+      storeName: 'clima_db',
+      driverOrder: ['indexeddb', 'websql', 'sqlite']
+    }),
     AppRoutingModule
   ],
   providers: [

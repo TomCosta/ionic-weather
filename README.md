@@ -1,12 +1,15 @@
 
-# Ionic Clima App com Open Weather
+# Ionic App Clima com Open Weather
 
-![Clima](./src/assets/imgs/clima-app.png)
+![Clima](./src/assets/imgs/Clima_App.gif)
 
 ![version][version-badge] ![Idioma][idioma] ![status][status-emprogresso] ![License][license-badge]
 #### | **IONIC** | [`@ionic/angular`](https://www.npmjs.com/package/@ionic/angular) [![version](https://img.shields.io/npm/v/@ionic/angular/latest.svg)](https://www.npmjs.com/package/@ionic/angular)
 
 Please, give a ⭐ to the repo. It really motivates me to share more open source code.
+
+## Características deste projeto
+### Side Menu, Segments, Services, API Requests, Loading, Custom Layout, Gradient Color
 
 # Get Started
 This project was generated with [IONIC](https://ionicframework.com/docs/angular/your-first-app) version 5.0.5 and [NodeJS](https://nodejs.org/en/) version 12.16.1 LTS.
