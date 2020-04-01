@@ -1,5 +1,19 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --background: #008800; //var(--ion-item-background, var(--ion-background-color, #fff));
+}
+
+ion-menu {
+  --ion-text-color: var(--ion-color-light);
+  --ion-background-color: linear-gradient(197deg, #ffffef 0%, #ffff80 13.5%, #ffff60 33.33%, #008000 100%);
+
+  ion-toolbar {
+    --background: var(--ion-color-success);
+  }
+
+  ion-list {
+    /* optional, but it needs when you use gradient as a background color.*/
+    background: transparent;
+  }
 }
 
 ion-menu.md ion-content {
@@ -29,7 +43,6 @@ ion-menu.md ion-list#inbox-list {
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
   font-weight: 600;
-
   min-height: 20px;
 }
 
@@ -38,7 +51,7 @@ ion-menu.md ion-list#labels-list ion-list-header {
 
   margin-bottom: 18px;
 
-  color: #757575;
+  color: #f4f5f8;
 
   min-height: 26px;
 }
@@ -50,15 +63,15 @@ ion-menu.md ion-item {
 }
 
 ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  --background: rgba(var(--ion-color-success-rgb), 0.14);
 }
 
 ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-success);
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: #f4f5f8;
 }
 
 ion-menu.md ion-item ion-label {
@@ -85,12 +98,12 @@ ion-menu.ios ion-item {
 }
 
 ion-menu.ios ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-success);
 }
 
 ion-menu.ios ion-item ion-icon {
   font-size: 24px;
-  color: #73849a;
+  color: #f4f5f8;
 }
 
 ion-menu.ios ion-list#labels-list ion-list-header {
@@ -110,10 +123,14 @@ ion-menu.ios ion-note {
 ion-note {
   display: inline-block;
   font-size: 16px;
-
-  color: var(--ion-color-medium-shade);
+  color: var(--ion-color-light);
 }
 
 ion-item.selected {
-  --color: var(--ion-color-primary);
+  --color: var(--ion-color-success);
+}
+
+.my-loader{
+  --background:transparent !important;
+  --spinner-color:#008800;
 }

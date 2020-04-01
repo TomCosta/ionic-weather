@@ -1,5 +1,10 @@
 ion-item.item-input {
     color: #008000;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    --inner-border-width: 0px;
 }
 
 .resValue{
@@ -15,3 +20,14 @@ ion-item.item-input {
     --background: linear-gradient(197deg, #ffffef 0%, #ffff80 13.5%, #ffff60 33.33%, #008000 100%);
 }
 
+ion-list{
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #2dd36f;
+}
+
+ion-button{
+    color: #008000;
+}

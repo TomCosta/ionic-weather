@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Home',
+      title: 'Clima',
       url: '/home',
       icon: 'sunny'
     },
@@ -24,22 +24,22 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Favorites',
-      url: '/folder/Favorites',
+      url: '/home',
       icon: 'heart'
     },
     {
       title: 'Archived',
-      url: '/folder/Archived',
+      url: '/config',
       icon: 'archive'
     },
     {
       title: 'Trash',
-      url: '/folder/Trash',
+      url: '/home',
       icon: 'trash'
     },
     {
       title: 'Spam',
-      url: '/folder/Spam',
+      url: '/config',
       icon: 'warning'
     }
   ];

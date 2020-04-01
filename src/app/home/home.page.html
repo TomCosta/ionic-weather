@@ -11,7 +11,7 @@
 <ion-content class="home" [ngClass]="(clima == 'tempo nublado' || clima == 'nuvens quebrados') ? 'nublado' : 'bom'" class="ion-padding">
   <ion-grid *ngIf="dataWeather">
     <ion-row>
-      <ion-col width-50>
+      <ion-col>
         <h2 class="location">{{dataWeather.name}}</h2>
         <div *ngIf="weatherIcon" class="icon"><img src="{{weatherIcon}}" alt="clima"></div>
         <h5 class="ion-text-capitalize desc">{{dataWeather.weather[0].description}}</h5>
@@ -19,40 +19,50 @@
       </ion-col>
     </ion-row>
 
-    <ion-segment (ionChange)="segmentChanged($event)">
-      <ion-segment-button value="hum">
-        <ion-label>Humidade</ion-label>
-        <span class="resValue"> {{dataWeather.main.humidity}}%</span>
+    <ion-segment mode="ios" scrollable="true" type="button" [(ngModel)]="mySeg" name="mySeg" (ionChange)="segmentChanged(mySeg)" class="segCor">
+      <ion-segment-button value="hum" class="segCor segCor2">
+        <ion-icon name="water-outline"></ion-icon>
+        <ion-label>Humidade</ion-label>        
       </ion-segment-button>
-      <ion-segment-button value="min">
-        <ion-label>Temp. Min.</ion-label>
-        <span class="resValue"> {{dataWeather.main.temp_min}}&deg;</span>
+      <ion-segment-button value="min" class="segCor segCor2">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <ion-label>Temp. Min.</ion-label>        
       </ion-segment-button>
-      <ion-segment-button value="max">
+      <ion-segment-button value="max" class="segCor segCor2">
+        <ion-icon name="add-circle-outline"></ion-icon>
         <ion-label>Temp. Max.</ion-label>
-        <span class="resValue"> {{dataWeather.main.temp_max}}&deg;</span>
       </ion-segment-button>
     </ion-segment>
 
-    <!-- <ion-row>
-      <ion-col width-100>
-        <ion-list> -->
-          <!-- <ion-item>
-            <strong>Temperatura: </strong><span class="alinhaDireita"> {{dataWeather.main.temp}}&deg;</span>
-          </ion-item> -->
-          <!-- <ion-item>
-            <strong>Humidade Rel: </strong><span class="alinhaDireita"> {{dataWeather.main.humidity}}%</span>
-          </ion-item>
-          <ion-item>
-            <strong>Temp. Min.: </strong><span class="alinhaDireita"> {{dataWeather.main.temp_min}}&deg;</span>
-          </ion-item>
-          <ion-item>
-            <strong>Temp. Max.: </strong><span class="alinhaDireita"> {{dataWeather.main.temp_max}}&deg;</span>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row> -->
+    <div [ngSwitch]="mySeg">
+
+    <ion-grid *ngSwitchCase="'hum'">
+      <ion-row class="ion-text-center ion-padding-top">
+        <ion-col>
+          <span class="resValue"> {{dataWeather.main.humidity}}%</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngSwitchCase="'min'">
+      <ion-row class="ion-text-center ion-padding-top">
+        <ion-col>
+          <span class="resValue"> {{dataWeather.main.temp_min}}&deg;</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngSwitchCase="'max'">
+      <ion-row class="ion-text-center ion-padding-top">
+        <ion-col>
+          <span class="resValue"> {{dataWeather.main.temp_max}}&deg;</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    </div>
   </ion-grid>
+
   <div *ngIf="!dataWeather" class="home desc ion-padding">
     <p><strong> Certifique-se de que há conexão com a internet, ou digite novamente a cidade. </strong></p>
   </div>

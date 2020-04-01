@@ -14,22 +14,22 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-list>
-          <form (ngSubmit)="saveConfig(location)" novalidate class="ion-padding-horizontal">
-            <ion-item>
-              <ion-label fixed>
+        <ion-list lines="none">
+          <form (ngSubmit)="saveConfig(location)" class="ion-padding-horizontal">
+            <ion-item borders='none'>
+              <ion-label>
                 Cidade
               </ion-label>
               <ion-input placeholder="Cidade" [(ngModel)]="location.city" name="city" type="text"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label fixed>
+            <ion-item borders='none'>
+              <ion-label>
                 País
               </ion-label>
               <ion-input placeholder="País" [(ngModel)]="location.country" name="country" type="text" maxlength="2"></ion-input>
             </ion-item>
             <p></p>
-            <ion-button expand="block" fill="outline" type="submit" color="success">Adicionar</ion-button>
+            <ion-button expand="block" fill="outline" type="submit" color="light">Adicionar</ion-button>
           </form>
         </ion-list>
       </ion-col>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { ApiweatherService } from './../services/api/apiweather.service';
+import { LoaderService } from '../services/loader/loader.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
@@ -11,15 +12,18 @@ import { Storage } from '@ionic/storage';
 
 export class HomePage implements OnInit {
 
-  title = 'Clima';
+  mySeg;
+  title = 'Clima';  
   dataWeather;
+  weatherIcon;
   location = {
     city: '', 
     country: ''
   }
 
-  constructor(
+  constructor(    
     private apiServ: ApiweatherService,
+    private loadServ:LoaderService,
     private storage: Storage,
     private router: Router
   ){            
@@ -27,16 +31,28 @@ export class HomePage implements OnInit {
 
   ionViewWillEnter(){
     this.getLocation();
+    this.getFlow();
   }
 
   ngOnInit() {       
   }
 
-  segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+  segmentChanged(mySeg) {  
+    this.storage.set('mySegment', mySeg);
+  }
+
+  async getFlow(){
+    await this.storage.get('tabFlow').then((seg)=>{
+      if(seg){
+        this.mySeg = seg;
+      }else{
+        this.mySeg = 'hum';
+      }
+    })
   }
 
   async getLocation(){
+    this.loadServ.presentLoading();
     this.storage.get('location').then((val) => {
       if(val != null || val != undefined){
         let location = JSON.parse(val);
@@ -51,8 +67,14 @@ export class HomePage implements OnInit {
 
   async getWeather(city, country){
     this.apiServ.getWeather(city, country).subscribe((res)=>{
-      console.log('Result: ', res);
-      this.dataWeather = res;
+      if(res != undefined || res != null){
+        this.weatherIcon = 'http://openweathermap.org/img/w/' + res['weather'][0].icon + '.png';
+        this.dataWeather = res;
+        this.loadServ.dismissLoader();
+        }else{
+          this.dataWeather = 'false';
+          this.loadServ.dismissLoader();
+        }
     })
   }
 }
